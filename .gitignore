@@ -1,0 +1,5 @@
+# environment dir
+.venv
+
+# zip files
+*.zip
