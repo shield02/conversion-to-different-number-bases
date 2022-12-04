@@ -182,3 +182,10 @@ print(to_base(58,2))
 print(to_base(58,10))
 print(to_base(58,16))
 print(to_base(58))
+
+print('-----------------------------')
+
+print(to_base(700,2))
+print(to_base(700,10))
+print(to_base(700,16))
+print(to_base(700))
