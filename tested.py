@@ -122,3 +122,9 @@ print(to_base8(1274,y=8))
 print(to_base8('2BC',y=16))
 print(to_base8(700))
 
+print('------------------------')
+print(to_base8('010011111010',y=2))
+print(to_base8(2372,y=8))
+print(to_base8('4FA',y=16))
+print(to_base8(1274))
+
