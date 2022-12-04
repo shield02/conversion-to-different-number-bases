@@ -2,7 +2,7 @@
 # y = int(input('Enter 2 or 16 or 10 as the current base: '))
 
 def to_base2(x):
-    """ Convert a number base 2
+    """ Convert a number to base 2
 
         Arguments:
         ------------------------
@@ -46,6 +46,8 @@ def from_2_to_8(x):
     count = 0
     digit = 0
 
+    x = str(x)                                    # convert x vals to str
+
     for i in range(len(x),0,-1):
         if count < 3:
             digit += int(x[i-1])*(2**count)       # build the base 8 digits
@@ -72,6 +74,8 @@ def to_base8(x):
     """
     base_8 = ''                # init to empty string
 
+    x = int(x)                 # convert x vals to int
+
     while x//8 > 0:
         remd = x%8             # get the remainder
         base_8 += str(remd)    # convert rem to str and to base_2
@@ -95,6 +99,9 @@ def to_base16(x):
     base_16 = ''                       # init base 16 to empty string
 
     hex_char = '0123456789ABCDEF'      # all hex-decimal values
+
+    x = int(x)                         # convert x vals to int
+
     while x//16 > 0:
         remd = x%16                    # get the remainder
         base_16 += hex_char[remd]      # convert rem to str and to base_16
@@ -117,14 +124,17 @@ def from_16_to_10(base16):
     """
     hex_val = { 'A':10, 'B':11, 'C':12, 'D':13, 'E':14, 'F':15 }
 
-    n = len(base16) - 1                   # value to be used as power
+    base16 = str(base16)                  # convert base16 vals to str
+
+    n = len(base16) - 1                   # get value to be used as power
     base_10 = 0                           # init base 10 to zero
 
     for i in base16:
-        if i in hex_val:
+        if i in hex_val.keys():           # check for each digit in hex_val
             i = hex_val[i]                # set i to be base 10 equival val
         base_10 += (int(i))*(16**n)       # build up base 10 value
-        n = n-1                           # decrease n
+        n-=1                              # decrease n
+    
     return base_10
 
 def to_base(x, y=8):
@@ -154,6 +164,7 @@ def to_base(x, y=8):
 
     # convert base 16 to base 8
     elif y == 16:
+        # convert to base 16
         base_16 = to_base16(x)
 
         # convert from base 16 to base 10
