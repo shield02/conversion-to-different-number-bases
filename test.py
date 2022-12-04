@@ -127,7 +127,7 @@ def from_16_to_10(base16):
         n = n-1                           # decrease n
     return base_10
 
-def conversion(x, y=8):
+def to_base(x, y=8):
     """ Convert a number from a specified base to base 8
 
         Arguments:
@@ -140,7 +140,7 @@ def conversion(x, y=8):
         base_8: str of base 8 values
     """
     i_x = x              # keep initial value of x
-    i_y = y              # keep initial value of x
+    i_y = y              # keep initial value of y
 
     # covert base 2 to base 8
     if y == 2: 
@@ -178,6 +178,7 @@ def conversion(x, y=8):
     else: 
         return f'Your number {i_x} is assummed to already be in base {i_y}'
 
-print(conversion(58,2))
-print(conversion(58,10))
-print(conversion(58,16))
+print(to_base(58,2))
+print(to_base(58,10))
+print(to_base(58,16))
+print(to_base(58))
